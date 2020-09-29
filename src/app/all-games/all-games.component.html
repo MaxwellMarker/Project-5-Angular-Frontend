@@ -1,8 +1,11 @@
-<h2>All games</h2>
-<div>
+<div class="allGamesContainer">
     <a *ngFor="let game of games">
-        <div>
-            {{game.name}}
+        <div class="gameCard" >
+            <div class="gameImage" style="background-image: url('../../assets/images/{{game.img}}')"></div>
+            <div class="gameInfo">
+                <h2>{{game.name}}</h2>
+                <h2>{{game.releaseYear}}</h2>
+            </div>
         </div>
     </a>
 </div>
