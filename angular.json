@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "Project5-frontend"
+    }
+  },
+  "defaultProject": "Project5-frontend",
+  "cli": {
+    "analytics": false
+  }
 }

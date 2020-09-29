@@ -1,0 +1,19 @@
+.topBar {
+    height: 50px;
+    width: 100%;
+    background-color: rgb(58, 26, 26);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    h1 {
+        color: rgb(163, 100, 100);
+        margin: 0 20px;
+    }
+    .searchBar {
+        width: 250px;
+        height: 20px;
+        padding: 0 10px;
+        border-radius: 10% / 100%;
+        border: none;
+    }
+}
