@@ -1,5 +1,5 @@
 export interface Game {
-    id: string,
+    _id: string,
     name: string,
     releaseYear: number,
     img: string,
@@ -9,4 +9,5 @@ export interface Game {
     publishers: Array<string>,
     developers: Array<string>,
     reviews: Array<Object>
+    createdAt: Date
 }

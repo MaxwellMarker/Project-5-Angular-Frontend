@@ -16,8 +16,17 @@ export class AllGamesComponent implements OnInit {
   }
 
   games: Game[];
+  
   getGames(): void {
     this.gameService.getGames()
-        .subscribe(games => this.games = games);
+        .subscribe(games => this.games = games.sort((a, b) => {
+          if(a.name > b.name){
+            return 1
+          }
+          if(b.name > a.name){
+            return -1
+          }
+          return 0
+        }));
   }
 }
