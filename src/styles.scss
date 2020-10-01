@@ -16,11 +16,13 @@ body {
     margin: 7px;
     border-radius: 1px;
     border: 1px solid rgb(99, 99, 99);
+    transition: .3s;
     .gameImage {
         height: 215px;
         width: 180px;
         background-size: cover;
         background-position: center;
+        transition: .3s;
     }
     .gameInfo {
         height: 50px;
@@ -30,5 +32,13 @@ body {
             color: rgb(255, 240, 240);
             font-size: 12px;
         }
+    }
+}
+.gameCard:hover {
+    width: 189px;
+    margin: 7px 3.5px;
+    box-shadow: 0 0 8px 0 rgba(255, 255, 255, 0.9);
+    .gameImage {
+        width: 187px
     }
 }
