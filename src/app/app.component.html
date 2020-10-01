@@ -1,5 +1,5 @@
 <app-top-bar></app-top-bar>
-<nav>
-  <a routerLink='/allgames'>All Games</a>
-</nav>
-<router-outlet></router-outlet>
+<app-nav-bar></app-nav-bar>
+<div [@routeAnimations]="prepareRoute(outlet)">
+  <router-outlet #outlet="outlet"></router-outlet>
+</div>

@@ -1,0 +1,12 @@
+<div class="detailPageWrap" *ngIf="game">
+    <div class="detailContainer">
+        <div class="gameBGImage" style="background-image: url('../../assets/images/{{game.img}}');">
+        </div>
+        <h1>{{game.name}}</h1>
+        <h3>
+            Available on:
+            <span *ngFor="let platform of game.platforms; let index = index;">{{platform}}<span *ngIf="game.platforms.length - 1 > index">, </span></span>
+        </h3>
+        <h3>Released {{game.releaseYear}}</h3>
+    </div>
+</div>

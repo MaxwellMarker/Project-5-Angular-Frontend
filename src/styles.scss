@@ -6,25 +6,39 @@
     outline: none;
     text-decoration: none;
 }
+body {
+    background-image: url('./assets/images/Untitled.png');
+    background-size: 200px 200px;
+}
 .gameCard {
-    background-color: rgb(63, 63, 63);
+    background-color: rgb(54, 54, 54);
     width: 182px;
-    margin: 5px;
+    margin: 7px;
     border-radius: 1px;
-    border: 1px solid black;
+    border: 1px solid rgb(99, 99, 99);
+    transition: .3s;
     .gameImage {
         height: 215px;
         width: 180px;
         background-size: cover;
         background-position: center;
+        transition: .3s;
     }
     .gameInfo {
         height: 50px;
-        padding: 3px;
-        border-top: 1px solid black;
+        padding: 3px 5px;
+        border-top: 1px solid rgb(99, 99, 99);
         h2 {
             color: rgb(255, 240, 240);
             font-size: 12px;
         }
+    }
+}
+.gameCard:hover {
+    width: 189px;
+    margin: 7px 3.5px;
+    box-shadow: 0 0 8px 0 rgba(255, 255, 255, 0.9);
+    .gameImage {
+        width: 187px
     }
 }

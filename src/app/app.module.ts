@@ -7,13 +7,17 @@ import { AppComponent } from './app.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { AllGamesComponent } from './all-games/all-games.component';
 import { HomeComponent } from './home/home.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { GameDetailsComponent } from './game-details/game-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TopBarComponent,
     AllGamesComponent,
-    HomeComponent
+    HomeComponent,
+    NavBarComponent,
+    GameDetailsComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,5 @@
 <div class="allGamesContainer">
-    <a *ngFor="let game of games">
+    <a *ngFor="let game of games" routerLink="/details/{{game._id}}">
         <div class="gameCard" >
             <div class="gameImage" style="background-image: url('../../assets/images/{{game.img}}')"></div>
             <div class="gameInfo">
