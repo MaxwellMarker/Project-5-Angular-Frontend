@@ -13,7 +13,7 @@ import { slideInAnimation } from './animations';
 })
 export class AppComponent {
   title = 'Project5-frontend';
-
+  
   prepareRoute(outlet: RouterOutlet) {
     return outlet && outlet.activatedRouteData && outlet.activatedRouteData.animation;
   }

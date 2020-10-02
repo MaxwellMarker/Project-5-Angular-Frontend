@@ -8,5 +8,28 @@
             <span *ngFor="let platform of game.platforms; let index = index;">{{platform}}<span *ngIf="game.platforms.length - 1 > index">, </span></span>
         </h3>
         <h3>Released {{game.releaseYear}}</h3>
+        <div >
+            <form class="reviewForm" [formGroup]="reviewForm" (ngSubmit)="onSubmit()">
+                <div>
+                    <label class="titleLabel">
+                        Title:
+                        <input type="text" formControlName="title"/>
+                    </label>
+                    <label class="ratingLabel">
+                        Rating
+                        <input type="range" min="0" max="10" formControlName="rating"/>
+                        
+                    </label>
+                </div>
+                <label>
+                    Content<br/>
+                    <textarea formControlName="content"></textarea>
+                </label>
+                <input type="submit" [disabled]="!reviewForm.valid"/>
+            </form>
+        </div>
+        <div *ngFor="let review of reviews">
+            {{review.username}}
+        </div>
     </div>
 </div>

@@ -3,6 +3,7 @@ import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Game } from './game';
+import { server } from './variables';
 
 @Injectable({
   providedIn: 'root'
@@ -22,7 +23,7 @@ export class GameService {
     };
   }
 
-  private gamesUrl = 'http://localhost:3000/games';
+  private gamesUrl = `${server}/games`;
 
   getGames(): Observable<Game[]> {
     return this.http.get<Game[]>(this.gamesUrl)
