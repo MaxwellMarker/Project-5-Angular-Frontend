@@ -24,5 +24,71 @@
             height: 100vh;
             z-index: -1;
         }
+        .reviewForm {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 10px;
+            // border: 1px solid silver;
+            font-size: 20px;
+            .titleLabel {
+                border-bottom: 1px solid silver;
+            }
+            .ratingLabel {
+                margin: 0 50px;
+            }
+            input[type=text] {
+                background-color: transparent;
+                border: none;
+                color: silver;
+                font-size: 18px;
+                width: 350px;
+            }
+            input[type=submit] {
+                width: 100px;
+                background-color: transparent;
+                color: silver;
+                border: 1px solid silver;
+                font-size: 20px;
+            }
+            input[type='range'] {
+                overflow: hidden;
+                width: 120px;
+                border-radius: 5px;
+                border: 1px solid black;
+                -webkit-appearance: none;
+                background-color: #ff8080;
+            }
+            input[type='range']::-webkit-slider-runnable-track {
+                height: 10px;
+                -webkit-appearance: none;
+                color: #fafffe;
+                margin-top: -1px;
+            }
+            input[type='range']::-webkit-slider-thumb {
+                width: 10px;
+                -webkit-appearance: none;
+                height: 11px;
+                border-radius: 5px;
+                cursor: ew-resize;
+                background: #ffffff;
+                border: 1px solid black;
+                box-shadow: -83px 0 0 80px #88ff88;
+            }
+            textarea {
+                resize: none;
+                color: silver;
+                font-size: 16px;
+                padding: 5px;
+                width: 100%;
+                height: 100px;
+                background-color: transparent;
+                border: 1px solid silver;
+                border-radius: 3px;
+            }
+            label {
+                margin: 10px 0;
+            }
+        }
     }
 }
