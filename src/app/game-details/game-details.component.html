@@ -18,7 +18,7 @@
                     <label class="ratingLabel">
                         Rating
                         <input type="range" min="0" max="10" formControlName="rating"/>
-                        
+                        {{reviewForm.value.rating}}/10
                     </label>
                 </div>
                 <label>
@@ -28,8 +28,15 @@
                 <input type="submit" [disabled]="!reviewForm.valid"/>
             </form>
         </div>
-        <div *ngFor="let review of reviews">
-            {{review.username}}
+        <div *ngFor="let review of reviews" class="reviewContainer">
+            <h1>
+                <span class="rate{{review.rating}}">{{review.rating}}/10</span>
+                {{review.title}}
+            </h1>
+            <h4>by <span class="bold">{{review.username}}</span> on <span class="bold">{{review.createdAt | date}}</span></h4>
+            <p>
+                {{review.content}}
+            </p>
         </div>
     </div>
 </div>
