@@ -24,11 +24,19 @@ export class ReviewService {
       return of(result as T);
     };
   }
+  
+  httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  };
 
   getReviews(id: string): Observable<Review[]> {
     const url = `${this.reviewsUrl}/${id}`
     return this.http.get<Review[]>(url).pipe(
       catchError(this.handleError<Review[]>(`getGame ${id}`))
     )
+  }
+
+  addReview(review: Review): Observable<Review> {
+    return this.http.post<Review>(this.reviewsUrl, review, this.httpOptions)
   }
 }

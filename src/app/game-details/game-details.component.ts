@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location, CommonModule } from '@angular/common';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { Validators, FormControl, FormGroup } from '@angular/forms';
 
 import { Game } from '../game';
 import { GameService } from '../game.service';
@@ -20,11 +20,9 @@ export class GameDetailsComponent implements OnInit {
   reviews: Review[]
   
   reviewForm = new FormGroup({
-    username: new FormControl(''),
-    title: new FormControl(''),
-    content: new FormControl(''),
-    rating: new FormControl(),
-    gameId: new FormControl('')
+    title: new FormControl('', Validators.required),
+    content: new FormControl('', Validators.required),
+    rating: new FormControl(5, Validators.required)
   });
 
   ngOnInit(): void {
@@ -38,9 +36,14 @@ export class GameDetailsComponent implements OnInit {
     private reviewService: ReviewService,
     private location: Location
   ) { }
-
+  addReview(review: Review): void {
+    this.reviewService.addReview( review as Review)
+        .subscribe(review => { this.reviews.unshift(review)})
+  }
   onSubmit() {
-    console.log(this.reviewForm.value)
+    this.reviewForm.value.gameId = this.game._id
+    this.reviewForm.value.username = localStorage.username || "anonymous"
+    this.addReview(this.reviewForm.value)
   }
     
   getGame(): void {
