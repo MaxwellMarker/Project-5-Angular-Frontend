@@ -2,14 +2,23 @@
     <div class="detailContainer">
         <div class="gameBGImage" style="background-image: url('../../assets/images/{{game.img}}');">
         </div>
-        <h1>{{game.name}}</h1>
-        <h3>
-            Available on:
-            <span *ngFor="let platform of game.platforms; let index = index;">{{platform}}<span *ngIf="game.platforms.length - 1 > index">, </span></span>
-        </h3>
-        <h3>Released {{game.releaseYear}}</h3>
-        <h4>Published by {{game.publishers}}</h4>
-        <h4>Developed by {{game.developers}}</h4>
+        <div class="detailFlex">
+            <div class="detailText">
+                <h1 class="gameName">{{game.name}}</h1>
+                <h3>Released {{game.releaseYear}}</h3>
+                <h4>Published by {{game.publishers}}</h4>
+                <h4>Developed by {{game.developers}}</h4>
+                <h3>
+                    Available on:
+                    <span *ngFor="let platform of game.platforms; let index = index;">{{platform}}<span *ngIf="game.platforms.length - 1 > index">, </span></span>
+                </h3>
+            </div>
+            <div class="gameDisplayImage">
+                <img src="../../assets/images/{{game.img}}"/>
+            </div>
+        </div>
+        <p class="gameDescription">{{game.description}}</p>
+        <h1 class="reviewHeader">Reviews</h1>
         <div >
             <form class="reviewForm" [formGroup]="reviewForm" (ngSubmit)="onSubmit()">
                 <div>

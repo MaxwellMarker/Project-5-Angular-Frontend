@@ -1,1 +1,17 @@
-<p>home works!</p>
+<div class="homePage">
+    <div class="homeCarousel">
+        <a routerLink="/details/{{games[0]._id}}">
+            <div class="game1">
+                <div class="gameImage" style="background-image: url('../../assets/images/{{games[0].img}}');">
+                </div>
+                <h1>{{games[0].name}}</h1>
+            </div>
+        </a>
+    </div>
+    <div>
+        <h1>Popular games by rating</h1>
+    </div>
+    <div>
+        <h1>recently added to the site</h1>
+    </div>
+</div>
