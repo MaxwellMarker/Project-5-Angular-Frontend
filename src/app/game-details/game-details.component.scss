@@ -22,8 +22,38 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 100%;
+            height: calc(100vw * 1.5);
+            max-height: 100%;
             z-index: -1;
+        }
+        .gameName {
+            font-size: 40px;
+            font-weight: 300;
+        }
+        .detailFlex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .detailText {
+            margin-left: 20px;
+        }
+        .gameDisplayImage {
+            margin: 20px 100px 20px 0;
+            img{
+                border-radius: 3px;
+                border: 1px solid silver;
+                box-shadow: 0 0 10px 0 white;
+            }
+        }
+        .gameDescription {
+            text-indent: 20px;
+        }
+        .reviewHeader {
+            text-align: center;
+            margin: 50px auto 25px auto;
+            width: 200px;
+            border-bottom: 1px solid silver;
         }
         .reviewForm {
             display: flex;

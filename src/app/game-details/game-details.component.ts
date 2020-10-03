@@ -44,6 +44,8 @@ export class GameDetailsComponent implements OnInit {
     this.reviewForm.value.gameId = this.game._id
     this.reviewForm.value.username = localStorage.username || "anonymous"
     this.addReview(this.reviewForm.value)
+    this.reviewForm.reset()
+    this.reviewForm.value.rating = 5
   }
     
   getGame(): void {
