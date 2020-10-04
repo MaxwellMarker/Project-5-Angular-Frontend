@@ -22,16 +22,29 @@ body {
         height: 215px;
         width: 180px;
         background-size: cover;
-        background-position: center;
+        background-position: top center;
         transition: .3s;
     }
     .gameInfo {
-        height: 50px;
-        padding: 3px 5px;
+        position: relative;
+        height: 45px;
+        padding: 2px 3px;
         border-top: 1px solid rgb(99, 99, 99);
+        line-height: 12px;
         h2 {
             color: rgb(255, 240, 240);
             font-size: 12px;
+        }
+        .releaseYear {
+            position: absolute;
+            bottom: 3px;
+            left: 2px;
+        }
+        .gameRating {
+            position: absolute;
+            bottom: 3px;
+            right: 2px;
+            font-size: 15px;
         }
     }
 }

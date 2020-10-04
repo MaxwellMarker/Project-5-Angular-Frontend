@@ -1,17 +1,31 @@
-<div class="homePage">
-    <div class="homeCarousel">
-        <a routerLink="/details/{{games[0]._id}}">
-            <div class="game1">
-                <div class="gameImage" style="background-image: url('../../assets/images/{{games[0].img}}');">
-                </div>
-                <h1>{{games[0].name}}</h1>
+<div class="homePage" *ngIf="games">
+    <div class="parentFlex">
+        <div class="mainFlex">
+            <div class="homeCarousel">
+                <a routerLink="/details/{{games[carouselIndex]._id}}">
+                    <div class="game1">
+                        <div class="gameImage" style="background-image: url('../../assets/images/{{games[carouselIndex].img}}');">
+                        </div>
+                        <h1>{{games[carouselIndex].name}}</h1>
+                    </div>
+                </a>
+                <div class="carouselCover" appCover></div>
             </div>
-        </a>
-    </div>
-    <div>
-        <h1>Popular games by rating</h1>
-    </div>
-    <div>
-        <h1>recently added to the site</h1>
+            <div class="recentBox">
+                <div class="fadeBar"></div>
+                <a *ngFor="let game of games" routerLink="/details/{{game._id}}">
+                    <div class="gameCardHome" >
+                        <div class="gameImage" style="background-image: url('../../assets/images/{{game.img}}')"></div>
+                        <div class="gameInfo">
+                            <h2>{{game.name}}</h2>
+                            <h2 class="releaseYear">{{game.releaseYear}}</h2>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="secondaryFlex">
+            <h1>Popular games by rating</h1>
+        </div>
     </div>
 </div>
