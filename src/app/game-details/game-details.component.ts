@@ -28,6 +28,11 @@ export class GameDetailsComponent implements OnInit {
   ngOnInit(): void {
     this.getGame()
     this.getReviews()
+    // setTimeout(() => {
+    //   if(this.reviews.length > 0){
+    //     this.updateRating()
+    //   }
+    // }, 1000);
   }
   
   constructor(
@@ -36,16 +41,32 @@ export class GameDetailsComponent implements OnInit {
     private reviewService: ReviewService,
     private location: Location
   ) { }
+  
+  updateRating(): void {
+    let arr = this.reviews.map((review)  => {
+      return review.rating
+    })
+    let rawScore = arr.reduce((a, b) => {return a + b})/arr.length
+    rawScore = Math.round(rawScore * 10)/10
+    this.game.rating = rawScore
+    this.gameService.updateRating(this.game._id, rawScore)
+        .subscribe()
+  }
+  
   addReview(review: Review): void {
     this.reviewService.addReview( review as Review)
         .subscribe(review => { this.reviews.unshift(review)})
   }
+
   onSubmit() {
     this.reviewForm.value.gameId = this.game._id
     this.reviewForm.value.username = localStorage.username || "anonymous"
     this.addReview(this.reviewForm.value)
     this.reviewForm.reset()
     this.reviewForm.value.rating = 5
+    setTimeout(() => {
+      this.updateRating()
+    }, 1000);
   }
     
   getGame(): void {

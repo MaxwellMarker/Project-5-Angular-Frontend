@@ -11,6 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { GameDetailsComponent } from './game-details/game-details.component';
 import { CoverDirective } from './cover.directive';
+import { RequestsComponent } from './requests/requests.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { CoverDirective } from './cover.directive';
     HomeComponent,
     NavBarComponent,
     GameDetailsComponent,
-    CoverDirective
+    CoverDirective,
+    RequestsComponent
   ],
   imports: [
     BrowserModule,

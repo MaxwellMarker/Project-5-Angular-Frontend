@@ -39,15 +39,34 @@
             margin-left: 20px;
         }
         .gameDisplayImage {
-            margin: 20px 100px 20px 0;
+            margin: 20px 10% 20px 0;
             img{
                 border-radius: 3px;
                 border: 1px solid silver;
                 box-shadow: 0 0 10px 0 white;
             }
         }
+        .ratingCircle {
+            border: 1px solid silver;
+            border-radius: 50%;
+            height: 150px;
+            width: 150px;
+            margin: 0 auto;
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
         .gameDescription {
             text-indent: 20px;
+        }
+        .gameRating {
+            text-align: center;
+            font-size: 50px;
+        }
+        .ratingLabel {
+            text-align: center;
+            font-size: 12px;
         }
         .reviewHeader {
             text-align: center;
@@ -127,6 +146,9 @@
             box-shadow: 0 0 10px 0 white;
             padding: 10px;
             margin: 15px 10px;
+            p {
+                margin: 10px 0;
+            }
             .bold {
                 font-weight: bold;
                 font-size: 20px;

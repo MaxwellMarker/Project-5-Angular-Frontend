@@ -1,9 +1,10 @@
 .navBar {
     display: flex;
     justify-content: center;
-    margin: 10px;
+    margin: 15px;
     a {
-        width: 100px;
+        width: 10%;
+        min-width: 100px;
         height: 30px;
         background-color: rgb(20, 20, 20);
         border: 2px solid rgb(255, 126, 126);
@@ -15,7 +16,8 @@
         transition: .3s;
     }
     a:hover {
-        width: 110px;
+        width: 11%;
+        min-width: 110px;
         box-shadow: 0 0 8px 0 rgba(255, 255, 255, 0.9);
         color: red;
     }

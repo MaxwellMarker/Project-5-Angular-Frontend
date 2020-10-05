@@ -18,36 +18,42 @@
             </div>
         </div>
         <p class="gameDescription">{{game.description}}</p>
-        <h1 class="reviewHeader">Reviews</h1>
-        <div >
-            <form class="reviewForm" [formGroup]="reviewForm" (ngSubmit)="onSubmit()">
-                <div>
-                    <label class="titleLabel">
-                        Title:
-                        <input type="text" formControlName="title"/>
+        <ng-container *ngIf="reviews">
+            <div class="ratingCircle">
+                <h1 class="gameRating">{{game.rating}}/10</h1>
+                <h2 class="ratingLabel">Current User Rating</h2>
+            </div>
+            <h1 class="reviewHeader">Reviews</h1>
+            <div >
+                <form class="reviewForm" [formGroup]="reviewForm" (ngSubmit)="onSubmit()">
+                    <div>
+                        <label class="titleLabel">
+                            Title:
+                            <input type="text" formControlName="title"/>
+                        </label>
+                        <label class="ratingLabel">
+                            Rating
+                            <input type="range" min="0" max="10" formControlName="rating"/>
+                            {{reviewForm.value.rating}}/10
+                        </label>
+                    </div>
+                    <label>
+                        Content<br/>
+                        <textarea formControlName="content"></textarea>
                     </label>
-                    <label class="ratingLabel">
-                        Rating
-                        <input type="range" min="0" max="10" formControlName="rating"/>
-                        {{reviewForm.value.rating}}/10
-                    </label>
-                </div>
-                <label>
-                    Content<br/>
-                    <textarea formControlName="content"></textarea>
-                </label>
-                <input type="submit" [disabled]="!reviewForm.valid"/>
-            </form>
-        </div>
-        <div *ngFor="let review of reviews" class="reviewContainer">
-            <h1>
-                <span class="rate{{review.rating}}">{{review.rating}}/10</span>
-                {{review.title}}
-            </h1>
-            <h4>by <span class="bold">{{review.username}}</span> on <span class="bold">{{review.createdAt | date}}</span></h4>
-            <p>
-                {{review.content}}
-            </p>
-        </div>
+                    <input type="submit" [disabled]="!reviewForm.valid"/>
+                </form>
+            </div>
+            <div *ngFor="let review of reviews" class="reviewContainer">
+                <h1>
+                    <span class="rate{{review.rating}}">{{review.rating}}/10</span>
+                    {{review.title}}
+                </h1>
+                <h4>by <span class="bold">{{review.username}}</span> on <span class="bold">{{review.createdAt | date}}</span></h4>
+                <p>
+                    {{review.content}}
+                </p>
+            </div>
+        </ng-container>
     </div>
 </div>

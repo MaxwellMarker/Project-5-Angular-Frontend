@@ -16,6 +16,8 @@ import { CoverDirective } from '../cover.directive';
 export class HomeComponent implements OnInit {
   
   games: Game[];
+  topGames: Game[];
+  recentGames: Game[];
   carouselIndex: number;
   carouselCover: string;
   @ViewChildren(CoverDirective) cover;
@@ -31,20 +33,24 @@ export class HomeComponent implements OnInit {
       this.getGames();
       this.carouselIndex = 0;
       this.setCarousel();
+      this.getTopGames();
+      this.getRecentGames();
   }
   setCarousel(): void {
     setTimeout(() => {
       this.cover.first.coverOn()
-    }, 6300);
+    }, 5300);
     setTimeout(() => {
       if(this.carouselIndex === 0){
-        this.carouselIndex = 1;
-      }else if(this.carouselIndex === 1){
+        this.carouselIndex = 2;
+      }else if(this.carouselIndex === 2){
+        this.carouselIndex = 3
+      }else if(this.carouselIndex === 3){
         this.carouselIndex = 0
       }
       this.cover.first.coverOff()
       this.setCarousel()
-    }, 7000);
+    }, 6000);
   }
   getGames(): void {
     this.gameService.getGames()
@@ -56,6 +62,18 @@ export class HomeComponent implements OnInit {
             return -1
           }
           return 0
+        }));
+  }
+  getTopGames(): void {
+    this.gameService.getGames()
+        .subscribe(games => this.topGames = games.sort((a, b) => {
+          return b.rating - a.rating
+        }));
+  }
+  getRecentGames(): void {
+    this.gameService.getGames()
+        .subscribe(games => this.recentGames = games.sort((a, b) => {
+          return Date.parse(b.createdAt) - Date.parse(a.createdAt)
         }));
   }
 }
