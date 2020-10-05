@@ -5,7 +5,7 @@ app = express();
 app.use(express.static("./dist/project5-frontend"));
 
 app.get("/*", (req, res) => {
-  res.sendFile(path.join(__dirname, '/dist/project5-frontend/src/index.html'));
+  res.sendFile(path.join(__dirname, '/dist/src/index.html'));
 });
 
 app.listen(process.env.PORT || 8080);
