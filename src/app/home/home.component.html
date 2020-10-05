@@ -27,9 +27,9 @@
                 </div>
             </div>
             <div class="recentContainer">
-                <h1>Recently Added To The Site</h1>
+                <h1>Random Games</h1>
                 <div class="recentBox">
-                    <a *ngFor="let game of recentGames" routerLink="/details/{{game._id}}">
+                    <a *ngFor="let game of randomGames" routerLink="/details/{{game._id}}">
                         <div class="gameCardHome" >
                             <div class="gameImage" style="background-image: url('../../assets/images/{{game.img}}')"></div>
                             <div class="gameInfo">

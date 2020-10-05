@@ -1,1 +1,25 @@
-<p>requests works!</p>
+<div class="requestPage">
+    <div>
+        <form class="reviewForm" [formGroup]="requestForm" (ngSubmit)="onSubmit()">
+            <h2>Use this page to make requests for games to be added to the site</h2>
+            <label class="titleLabel">
+                Title
+                <input type="text" formControlName="title"/>
+            </label>
+            <label>
+                Message<br/>
+                <textarea formControlName="message"></textarea>
+            </label>
+            <input type="submit" [disabled]="!requestForm.valid"/>
+        </form>
+    </div>
+    <div *ngFor="let request of requests" class="requestContainer">
+        <h2>
+            {{request.title}}
+        </h2>
+        <h4>by <span class="bold">{{request.username}}</span> on <span class="bold">{{request.createdAt | date}}</span></h4>
+        <p>
+            {{request.message}}
+        </p>
+    </div>
+</div>

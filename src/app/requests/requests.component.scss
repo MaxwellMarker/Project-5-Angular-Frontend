@@ -1,0 +1,67 @@
+.requestPage {
+    .reviewForm {
+        background-color: rgba(0, 0, 0, .8);
+        width: 70%;
+        margin: 0 auto;
+        padding: 10px;
+        border-radius: 3px;
+        color: silver;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 0 10px 0 rgba(255, 255, 255, .8);
+        h2 {
+            text-align: center;
+            margin: 10px 0;
+        }
+        input {
+            background-color: transparent;
+            border: none;
+            width: 250px;
+            color: silver;
+        }
+        input[type=submit] {
+            border: 1px solid silver;
+            border-radius: 1px;
+            width: 100px;
+            color: silver;
+            margin-top: 10px;
+        }
+        .titleLabel {
+            border-bottom: 1px solid silver;
+            width: 300px;
+        }
+        textarea {
+            resize: none;
+            width: 100%;
+            height: 50px;
+            background-color: transparent;
+            border: 1px solid silver;
+            border-radius: 1px;
+            color: silver;
+            padding: 3px;
+        }
+    }
+    .requestContainer {
+        border-radius: 3px;
+        background-color: rgba(0, 0, 0, .8);
+        box-shadow: 0 0 10px 0 rgba(255, 255, 255, .8);
+        padding: 6px 10px;
+        width: 70%;
+        margin: 10px auto;
+        color: silver;
+        font-size: 14px;
+        h2 {
+            line-height: 22px;
+        }
+        h4 {
+            font-size: 12px;
+        }
+        p {
+            margin: 0;
+        }
+        .bold {
+            font-weight: bold;
+            font-size: 14px;
+        }
+    }
+}

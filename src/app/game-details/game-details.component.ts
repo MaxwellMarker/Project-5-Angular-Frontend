@@ -28,11 +28,6 @@ export class GameDetailsComponent implements OnInit {
   ngOnInit(): void {
     this.getGame()
     this.getReviews()
-    // setTimeout(() => {
-    //   if(this.reviews.length > 0){
-    //     this.updateRating()
-    //   }
-    // }, 1000);
   }
   
   constructor(
@@ -41,7 +36,7 @@ export class GameDetailsComponent implements OnInit {
     private reviewService: ReviewService,
     private location: Location
   ) { }
-  
+
   updateRating(): void {
     let arr = this.reviews.map((review)  => {
       return review.rating
