@@ -28,13 +28,13 @@ export class RequestsComponent implements OnInit {
   getRequests(): void {
     this.requestService.getRequests()
         .subscribe(requests => this.requests = requests)
-  }
+  };
 
   onSubmit(): void {
     this.requestForm.value.username = localStorage.username || "anonymous";
     this.addRequest(this.requestForm.value);
     this.requestForm.reset();
-  }
+  };
 
   addRequest(request: Request): void {
     this.requestService.addRequest( request as Request)
