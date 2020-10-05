@@ -51,10 +51,10 @@ export class HomeComponent implements OnInit {
     }, 5300);
     setTimeout(() => {
       if(this.carouselIndex === 0){
-        this.carouselIndex = 5;
-      }else if(this.carouselIndex === 5){
-        this.carouselIndex = 2;
-      }else if(this.carouselIndex === 2){
+        this.carouselIndex = 1;
+      }else if(this.carouselIndex === 1){
+        this.carouselIndex = 6;
+      }else if(this.carouselIndex === 6){
         this.carouselIndex = 0;
       }
       this.cover.first.coverOff()
