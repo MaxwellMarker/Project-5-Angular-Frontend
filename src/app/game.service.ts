@@ -12,6 +12,10 @@ export class GameService {
 
   constructor( private http: HttpClient ) { }
 
+  httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  };
+
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
   
@@ -36,4 +40,7 @@ export class GameService {
     )
   }
 
+  updateRating(id: string, rating: number): Observable<any> {
+    return this.http.put(`${this.gamesUrl}/${id}`, {rating: rating}, this.httpOptions)
+  }
 }

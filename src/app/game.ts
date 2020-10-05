@@ -8,5 +8,6 @@ export interface Game {
     genres: Array<string>,
     publishers: Array<string>,
     developers: Array<string>,
-    createdAt: Date
+    createdAt: any,
+    rating: number
 }

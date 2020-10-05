@@ -1,37 +1,134 @@
 .homePage {
-    .homeCarousel {
-        width: 60%;
-        height: 300px;
-        margin: 0 auto;
-        background-color: transparent;
-        border: 1px solid black;
-        border-radius: 5px;
-        overflow: hidden;
-        .game1 {
+    .gameCardHome {
+        background-color: rgb(27, 27, 27);
+        width: 150px;
+        margin: 5px;
+        border-radius: 1px;
+        border: 1px solid rgb(99, 99, 99);
+        transition: .3s;
+        .gameImage {
+            height: 170px;
+            width: 148px;
+            background-size: cover;
+            background-position: top center;
+            transition: .3s;
+        }
+        .gameInfo {
             position: relative;
-            display: flex;
-            align-items: flex-end;
-            height: 100%;
-            background-image: linear-gradient(0deg, black 20%, transparent);
-            h1 {
-                background-color: rgba(0, 0, 0, 0.822);
-                width: 100%;
-                height: 60px;
-                color: silver;
-                padding-left: 20px;
+            height: 45px;
+            padding: 2px 3px;
+            border-top: 1px solid rgb(99, 99, 99);
+            line-height: 12px;
+            h2 {
+                color: rgb(255, 240, 240);
+                font-size: 10px;
             }
-            .gameImage {
-                // mask-image: linear-gradient(90deg,rgba(0,0,0,0), rgba(0,0,0,1), rgba(0,0,0,0));
-                background-repeat: no-repeat;
-                background-position: center;
-                background-size: cover;
-                filter: blur(4px);
+            .releaseYear {
                 position: absolute;
-                top: 0;
-                left: 0;
+                bottom: 2px;
+                left: 2px;
+            }
+            .gameRating {
+                position: absolute;
+                bottom: 3px;
+                right: 2px;
+                font-size: 12px;
+            }
+        }
+    }
+    .gameCardHome:hover {
+        box-shadow: 0 0 10px rgba(255, 255, 255, .9);
+    }
+    .parentFlex {
+        display: flex;
+        justify-content: center;
+        margin: 0 10%;
+        .mainFlex {
+            padding: 0 10px;
+            width: 80%;
+            .homeCarousel {
+                position: relative;
                 width: 100%;
                 height: 300px;
-                z-index: -1;
+                margin: 0 auto;
+                background-color: transparent;
+                border: 3px solid black;
+                border-radius: 3px;
+                overflow: hidden;
+                .game1 {
+                    position: relative;
+                    display: flex;
+                    align-items: flex-end;
+                    height: 100%;
+                    background-image: linear-gradient(0deg, black 20%, transparent);
+                    box-shadow: 0 0 20px 5px black inset;
+                    h1 {
+                        background-color: rgba(0, 0, 0, 0.822);
+                        width: 100%;
+                        height: 60px;
+                        color: silver;
+                        padding-left: 20px;
+                    }
+                    .gameImage {
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        background-size: cover;
+                        filter: blur(4px);
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 330px;
+                        z-index: -1;
+                    }
+                }
+                .carouselCover {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    transition: .7s;
+                    z-index: -2;
+                }
+            }
+            .recentContainer {
+                margin-top: 10px;
+                background-color: rgba(0, 0, 0, .8);
+                padding: 5px;
+                h1 {
+                    color: silver;
+                    padding: 0 7px;
+                    font-size: 20px;
+                    border-bottom: 1px solid silver;
+                }
+                .recentBox {
+                    position: relative;
+                    // background-color: black;
+                    border: 2px solid black;
+                    border-left: 5px solid rgb(0, 0, 0);
+                    border-right: 5px solid rgb(0, 0, 0);
+                    border-radius: 3px;
+                    display: flex;
+                    align-items: center;
+                    overflow: scroll;
+                }
+            }
+        }
+        .secondaryFlex {
+            background-color: rgba(0, 0, 0, .8);
+            border-radius: 3px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            h1 {
+                color: silver;
+                font-size: 20px;
+                border-bottom: 1px solid silver;
+                width: 150px;
+                margin-bottom: 5px;
+                text-align: center;
+                // line-height: 40px;
             }
         }
     }

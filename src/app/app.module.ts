@@ -10,6 +10,8 @@ import { AllGamesComponent } from './all-games/all-games.component';
 import { HomeComponent } from './home/home.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { GameDetailsComponent } from './game-details/game-details.component';
+import { CoverDirective } from './cover.directive';
+import { RequestsComponent } from './requests/requests.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { GameDetailsComponent } from './game-details/game-details.component';
     AllGamesComponent,
     HomeComponent,
     NavBarComponent,
-    GameDetailsComponent
+    GameDetailsComponent,
+    CoverDirective,
+    RequestsComponent
   ],
   imports: [
     BrowserModule,

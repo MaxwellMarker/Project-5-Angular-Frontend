@@ -1,17 +1,80 @@
-<div class="homePage">
-    <div class="homeCarousel">
-        <a routerLink="/details/{{games[0]._id}}">
-            <div class="game1">
-                <div class="gameImage" style="background-image: url('../../assets/images/{{games[0].img}}');">
-                </div>
-                <h1>{{games[0].name}}</h1>
+<div class="homePage" *ngIf="games">
+    <div class="parentFlex">
+        <div class="mainFlex">
+            <div class="homeCarousel">
+                <a routerLink="/details/{{games[carouselIndex]._id}}">
+                    <div class="game1">
+                        <div class="gameImage" style="background-image: url('../../assets/images/{{games[carouselIndex].img}}');">
+                        </div>
+                        <h1>{{games[carouselIndex].name}}</h1>
+                    </div>
+                </a>
+                <div class="carouselCover" appCover></div>
             </div>
-        </a>
+            <div class="recentContainer">
+                <h1>Recently Added To The Site</h1>
+                <div class="recentBox">
+                    <a *ngFor="let game of recentGames" routerLink="/details/{{game._id}}">
+                        <div class="gameCardHome" >
+                            <div class="gameImage" style="background-image: url('../../assets/images/{{game.img}}')"></div>
+                            <div class="gameInfo">
+                                <h2>{{game.name}}</h2>
+                                <h2 class="releaseYear">{{game.releaseYear}}</h2>
+                                <h2 class="gameRating">{{game.rating}}/10</h2>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="recentContainer">
+                <h1>Recently Added To The Site</h1>
+                <div class="recentBox">
+                    <a *ngFor="let game of recentGames" routerLink="/details/{{game._id}}">
+                        <div class="gameCardHome" >
+                            <div class="gameImage" style="background-image: url('../../assets/images/{{game.img}}')"></div>
+                            <div class="gameInfo">
+                                <h2>{{game.name}}</h2>
+                                <h2 class="releaseYear">{{game.releaseYear}}</h2>
+                                <h2 class="gameRating">{{game.rating}}/10</h2>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="secondaryFlex" *ngIf="topGames">
+            <h1>Top Games</h1>
+            <a routerLink="/details/{{topGames[0]._id}}">
+                <div class="gameCardHome" >
+                    <div class="gameImage" style="background-image: url('../../assets/images/{{topGames[0].img}}')"></div>
+                    <div class="gameInfo">
+                        <h2>{{topGames[0].name}}</h2>
+                        <h2 class="releaseYear">{{topGames[0].releaseYear}}</h2>
+                        <h2 class="gameRating">{{topGames[0].rating}}/10</h2>
+                    </div>
+                </div>
+            </a>
+            <a routerLink="/details/{{topGames[1]._id}}">
+                <div class="gameCardHome" >
+                    <div class="gameImage" style="background-image: url('../../assets/images/{{topGames[1].img}}')"></div>
+                    <div class="gameInfo">
+                        <h2>{{topGames[1].name}}</h2>
+                        <h2 class="releaseYear">{{topGames[1].releaseYear}}</h2>
+                        <h2 class="gameRating">{{topGames[1].rating}}/10</h2>
+                    </div>
+                </div>
+            </a>
+            <a routerLink="/details/{{topGames[2]._id}}">
+                <div class="gameCardHome" >
+                    <div class="gameImage" style="background-image: url('../../assets/images/{{topGames[2].img}}')"></div>
+                    <div class="gameInfo">
+                        <h2>{{topGames[2].name}}</h2>
+                        <h2 class="releaseYear">{{topGames[2].releaseYear}}</h2>
+                        <h2 class="gameRating">{{topGames[2].rating}}/10</h2>
+                    </div>
+                </div>
+            </a>
+        </div>
     </div>
-    <div>
-        <h1>Popular games by rating</h1>
-    </div>
-    <div>
-        <h1>recently added to the site</h1>
-    </div>
+    <footer></footer>
 </div>
