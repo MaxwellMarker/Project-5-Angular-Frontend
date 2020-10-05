@@ -1,6 +1,9 @@
 # Project5Frontend
-
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.1.
+
+## LIVE LINK
+https://gamerview.herokuapp.com/home
+
 
 ## Development server
 
