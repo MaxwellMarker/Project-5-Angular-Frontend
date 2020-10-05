@@ -1,11 +1,16 @@
-express = require("express");
-const path = require('path')
-app = express();
+//Install express server
+const express = require('express');
+const path = require('path');
 
-app.use(express.static("./dist/project5-frontend"));
+const app = express();
 
-app.get("/*", (req, res) => {
-  res.sendFile(path.join(__dirname, '/dist/src/index.html'));
+// Serve only the static files form the dist directory
+app.use(express.static(__dirname + '/dist/Project5-frontend'));
+
+app.get('/*', function(req,res) {
+    
+res.sendFile(path.join(__dirname+'/dist/Project5-frontend/index.html'));
 });
 
+// Start the app by listening on the default Heroku port
 app.listen(process.env.PORT || 8080);
