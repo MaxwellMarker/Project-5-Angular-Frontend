@@ -10,7 +10,7 @@
                 <h4>Developed by {{game.developers}}</h4>
                 <h3>
                     Available on:
-                    <span *ngFor="let platform of game.platforms; let index = index;">{{platform}}<span *ngIf="game.platforms.length - 1 > index">, </span></span>
+                    <span *ngFor="let platform of game.platforms; let index = index;"> {{platform}}<span *ngIf="game.platforms.length - 1 > index">, </span></span>
                 </h3>
             </div>
             <div class="gameDisplayImage">
@@ -56,4 +56,5 @@
             </div>
         </ng-container>
     </div>
+    <footer></footer>
 </div>

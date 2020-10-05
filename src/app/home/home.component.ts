@@ -18,6 +18,7 @@ export class HomeComponent implements OnInit {
   games: Game[];
   topGames: Game[];
   recentGames: Game[];
+  randomGames: Game[];
   carouselIndex: number;
   carouselCover: string;
   @ViewChildren(CoverDirective) cover;
@@ -35,18 +36,26 @@ export class HomeComponent implements OnInit {
       this.setCarousel();
       this.getTopGames();
       this.getRecentGames();
+      this.getRandomGames();
   }
+  shuffleArray(array): Game[] {
+    for(let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array
+}
   setCarousel(): void {
     setTimeout(() => {
       this.cover.first.coverOn()
     }, 5300);
     setTimeout(() => {
       if(this.carouselIndex === 0){
+        this.carouselIndex = 5;
+      }else if(this.carouselIndex === 5){
         this.carouselIndex = 2;
       }else if(this.carouselIndex === 2){
-        this.carouselIndex = 3
-      }else if(this.carouselIndex === 3){
-        this.carouselIndex = 0
+        this.carouselIndex = 0;
       }
       this.cover.first.coverOff()
       this.setCarousel()
@@ -75,5 +84,9 @@ export class HomeComponent implements OnInit {
         .subscribe(games => this.recentGames = games.sort((a, b) => {
           return Date.parse(b.createdAt) - Date.parse(a.createdAt)
         }));
+  }
+  getRandomGames(): void {
+    this.gameService.getGames()
+        .subscribe(games => this.randomGames = this.shuffleArray(games));
   }
 }

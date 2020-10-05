@@ -3,18 +3,19 @@
     width: 100%;
     background-color: rgba(0, 0, 0, .8);
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid silver;
     h1 {
         color: rgb(238, 245, 255);
-        margin: 0 20px;
+        margin: 0 3%;
     }
     .searchBar {
-        width: 250px;
+        width: 300px;
         height: 20px;
         padding: 0 10px;
         border-radius: 9% / 100%;
         border: none;
+        margin: 0 3%;
     }
 }

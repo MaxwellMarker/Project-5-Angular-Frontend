@@ -3,20 +3,20 @@
     justify-content: center;
     margin: 15px;
     a {
-        width: 10%;
+        width: 15%;
         min-width: 100px;
         height: 30px;
         background-color: rgb(20, 20, 20);
         border: 2px solid rgb(255, 126, 126);
         border-radius: 1px;
         text-align: center;
-        line-height: 26px;
+        line-height: 24px;
         margin: 0 5px;
         color: rgb(255, 92, 92);
         transition: .3s;
     }
     a:hover {
-        width: 11%;
+        width: 16%;
         min-width: 110px;
         box-shadow: 0 0 8px 0 rgba(255, 255, 255, 0.9);
         color: red;
