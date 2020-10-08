@@ -1,5 +1,5 @@
 <nav class="navBar">
-    <a routerLink='/home'>Home</a>
-    <a routerLink='/allgames'>All Games</a>
-    <a routerLink='/requests'>Requests</a>
+    <a routerLink='/home' [class.selected]="'/home' === currentPage" (click)="onSelect('/home')">Home</a>
+    <a routerLink='/allgames' [class.selected]="'/allgames' === currentPage" (click)="onSelect('/allgames')">All Games</a>
+    <a routerLink='/requests' [class.selected]="'/requests' === currentPage" (click)="onSelect('/requests')">Requests</a>
 </nav>

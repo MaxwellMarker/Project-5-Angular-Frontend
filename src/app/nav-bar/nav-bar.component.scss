@@ -7,12 +7,12 @@
         min-width: 100px;
         height: 30px;
         background-color: rgb(20, 20, 20);
-        border: 2px solid rgb(255, 126, 126);
+        border: 2px solid silver;
         border-radius: 1px;
         text-align: center;
         line-height: 24px;
         margin: 0 5px;
-        color: rgb(255, 92, 92);
+        color: silver;
         transition: .3s;
     }
     a:hover {
@@ -20,5 +20,9 @@
         min-width: 110px;
         box-shadow: 0 0 8px 0 rgba(255, 255, 255, 0.9);
         color: red;
+    }
+    .selected {
+        color: red;
+        box-shadow: 0 0 8px 0 rgba(255, 255, 255, 0.7);
     }
 }
